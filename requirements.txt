@@ -1,0 +1,9 @@
+opencv-python
+torch
+torchvision
+natsort
+pytorchvideo
+scipy
+pandas
+matplotlib
+seaborn
