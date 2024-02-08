@@ -12,7 +12,7 @@ from pytorchvideo.data.ava import AvaLabeledVideoFramePaths
 from pytorchvideo.models.hub import slowfast_r50_detection
 from deep_sort.deep_sort import DeepSort
 
-from selfutils import save_video,send_image,MyVideoCapture
+from selfutils import save_video,send_image,send_video,MyVideoCapture
 import threading
 from os.path import join
 
@@ -133,7 +133,7 @@ def main(config):
             frames = cap.get_frames_around_index(index=cap.idx,frame_buffer=25)
             file_name = f"video_{cap.idx}.mp4"
             save_video(frame_list=frames,dst=os.path.join("tmp",file_name))
-            resp = send_image(file_name=file_name)
+            resp = send_video(file_name=file_name)
 
             if resp == 200:
                 # print("send successfully")
